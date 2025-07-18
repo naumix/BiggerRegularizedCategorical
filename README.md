@@ -1,28 +1,26 @@
-# Bigger, Regularized, Optimistic: scaling for compute and sample-efficient continuous control
+# Bigger, Regularized, Categorical: High-Capacity Value Functions are Efficient Multi-Task Learners
 
-https://arxiv.org/abs/2405.16158
+https://arxiv.org/pdf/2505.23150
 
-This branch contains the implementation of the BRO algorithm (NeurIPS 2024 spotlight) that has been migrated to use the newest versions of mujoco and gymansium. The codebase is heavily inspired by [JaxRL](https://github.com/ikostrikov/jaxrl) and [Parallel JaxRL](https://github.com/proceduralia/high_replay_ratio_continuous_control).
+This branch contains the implementation of the BRC algorithm.
 
 ## Example usage
 
-To run the BRO algorithm:
-`python3 train_parallel.py --benchmark=dmc --env_name=dog-run --num_seeds=10 --updates_per_step=10`
+To run the BRC algorithm in a single task mode, just pass a single task name to the `env_names` variable:
 
-To run the BRO (fast) version simply reduce the replay ratio to 2:
-`python3 train_parallel.py --benchmark=dmc --env_name=dog-run --num_seeds=10 --updates_per_step=2`
+`python3 train.py --env_names=dog-run`
+
+By passing a list of task names, multi-task mode will be enabled. 
 
 ## Citation
 
 If you find this repository useful, feel free to cite our paper using the following bibtex.
 
 ```
-@inproceedings{
-nauman2024bigger,
-title={Bigger, Regularized, Optimistic: scaling for compute and sample-efficient continuous control},
-author={Michal Nauman and Mateusz Ostaszewski and Krzysztof Jankowski and Piotr Miłoś and Marek Cygan},
-booktitle={Advances in Neural Information Processing Systems},
-year={2024},
-url={https://arxiv.org/pdf/2405.16158},
+@article{nauman2025bigger,
+  title={Bigger, Regularized, Categorical: High-Capacity Value Functions are Efficient Multi-Task Learners},
+  author={Nauman, Michal and Cygan, Marek and Sferrazza, Carmelo and Kumar, Aviral and Abbeel, Pieter},
+  journal={arXiv preprint arXiv:2505.23150},
+  year={2025}
 }
 ```
