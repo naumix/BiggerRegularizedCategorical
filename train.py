@@ -13,8 +13,6 @@ from jaxrl.env_names import get_environment_list
 
 FLAGS = flags.FLAGS
 
-## DO NOT TOUCH
-
 flags.DEFINE_integer('seed', 0, 'Random seed.')
 flags.DEFINE_integer('eval_episodes', 10, 'Number of episodes used for evaluation.')
 flags.DEFINE_integer('eval_interval', 50000, 'Eval interval.')
@@ -29,28 +27,6 @@ flags.DEFINE_boolean('render', True, 'Whether to log the rendering to wandb.')
 flags.DEFINE_integer('updates_per_step', 2, 'Number of updates per step.')
 flags.DEFINE_integer('width_critic', 4096, 'Width of the critic network.')
 
-
-'''
-class flags:
-    seed=1
-    eval_episodes=1
-    eval_interval=2000
-    batch_size=int(128)
-    max_steps=int(50000)
-    replay_buffer_size=int(500000)
-    start_training=int(3000)
-    updates_per_step=int(1)
-    benchmark='dmc'
-    env_name='dogs'
-    offline_evaluation = False
-    width_critic=512
-    num_bins=101
-    log_to_wandb=False
-    render=False
-    env_names = 'cartpole-swingup'
-        
-FLAGS = flags()
-'''
         
 def main(_):
     if FLAGS.log_to_wandb:
